@@ -1,0 +1,7 @@
+---
+
+- name: python | Install uv
+  command: pipx install uv
+
+# - name: python | Use uv to install Python
+#   command: run uv install python --preview

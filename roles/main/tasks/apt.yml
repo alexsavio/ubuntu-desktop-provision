@@ -1,0 +1,27 @@
+---
+
+# - apt_repository:
+#     repo: "{{ item }}"
+#     state: present
+#   with_items:
+#     - deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates main restricted
+#     - deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-updates universe
+#     - deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security main restricted
+#     - deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }}-security universe
+#     - deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} main restricted
+#     - deb-src http://archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} universe
+#   become: yes
+#   become_method: sudo
+
+- name: apt | Upgrade APT packages
+  apt:
+    update_cache: yes
+    upgrade: yes
+  become: yes
+  become_method: sudo
+
+- name: apt | Install apt packages
+  apt:
+    pkg: "{{ apt_packages }}"
+  become: yes
+  become_method: sudo

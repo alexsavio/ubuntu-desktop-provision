@@ -3,18 +3,19 @@
 - set_fact:
     homeschick_home: "{{ home_dir }}/.homesick/repos/homeshick"
 
-- name: Clone homeschick
+- name: homeschick | Clone homeschick
   git:
     repo: https://github.com/andsens/homeshick.git
     dest: "{{ homeschick_home }}"
 
-- name: Clone {{ homeschick_dotfiles }} at branch {{ dotfiles_branch }} into homeschick
+- name: homeschick | Clone {{ item.url }} at branch {{ item.branch }} into homeschick
   git:
-    repo: https://github.com/{{ homeschick_dotfiles }}.git
+    repo: "{{ item.url }}"
     dest: "{{ home_dir }}/.homesick/repos/dotfiles"
-    version: "{{ dotfiles_branch }}"
+    version: "{{ item.branch }}"
     update: no
-  when: homeschick_dotfiles is defined
+  with_items:
+    "{{ homeschick_repositories }}"
 
-- name: Run homeschick link --force
+- name: homeschick | Run homeschick link --force
   command: "{{ homeschick_home }}/bin/homeshick -f link"

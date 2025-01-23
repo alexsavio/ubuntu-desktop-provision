@@ -1,0 +1,25 @@
+---
+
+- include_tasks: home_folders.yml
+  tags: home_folders
+
+- include_tasks: apt.yml
+  tags: apt
+
+- include_tasks: zsh.yml
+  tags: zsh
+
+- include_tasks: homeschick.yml
+  tags: homeschick
+
+- include_tasks: python.yml
+  tags: python
+
+- include_tasks: docker.yml
+  tags: docker
+
+- include_tasks: rust.yml
+  tags: rust
+
+- include_tasks: apt_apps.yml
+  tags: apt_apps

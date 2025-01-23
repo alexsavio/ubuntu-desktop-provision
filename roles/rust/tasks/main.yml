@@ -1,5 +1,0 @@
----
-
-- import_tasks: install.yml
-  when: rust_version is defined
-  tags: rust

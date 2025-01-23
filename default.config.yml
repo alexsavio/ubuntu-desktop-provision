@@ -1,0 +1,78 @@
+---
+ansible_user: "{{ lookup('env', 'USER') }}"
+ansible_group: "{{ ansible_user }}"
+
+rsync_sync_src_dest: []
+
+apt_packages:
+  - ack
+  - ca-certificates
+  - cmake
+  - curl
+  - direnv
+  - fuse
+  - git
+  - make
+  - pass
+  - pipx
+  - rsync
+  - ssh
+  - sshpass
+  - sudo
+  - tig
+  - tmux
+  - vim
+  - wget
+  - zsh
+
+apt_app_packages:
+  - gparted
+  - meld
+  - vlc
+  - zeal
+
+cargo_packages:
+  - bat
+  - bdt
+  - broot
+  - calc
+  - clog-cli
+  - coreutils
+  - ddh
+  - diskonaut
+  - drill
+  - du-dust
+  - exa
+  - fblog
+  - fd-find
+  - fend
+  - git-cliff
+  - git-journal
+  - git-tidy
+  - git-delta
+  - gitui
+  - grex
+  - just
+  - lsd
+  - monolith
+  - oxker
+  - procs
+  - pumas
+  - pyflow
+  - pylyzer
+  - ripgrep
+  - rm-improved
+  - sd
+  - starship
+  - tealdeer
+  - tokei
+  - ttdl
+  - watchexec-cli
+  - xcp
+  - xh
+  - zoxide
+
+pipx_packages:
+  - httpie
+  - csvkit
+  - tsrc

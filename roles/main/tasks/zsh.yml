@@ -1,0 +1,13 @@
+---
+
+- name: zsh | Install Oh My ZSH
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  args:
+    creates: "{{ home_dir }}/.oh-my-zsh"
+
+- name: zsh | Change the default shell for {{ user }}
+  user:
+    name: "{{ user }}"
+    shell: /bin/zsh
+  become: yes
+  become_method: sudo

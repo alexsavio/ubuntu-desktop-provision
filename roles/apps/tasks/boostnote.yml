@@ -1,8 +1,0 @@
----
-
-- name: boostnote | Install from remote .deb package
-  apt:
-    deb: https://github.com/BoostIO/BoostNote.next/releases/latest/download/boost-note-linux.deb
-    force: yes
-  become: yes
-  become_method: sudo

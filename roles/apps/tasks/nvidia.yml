@@ -1,9 +1,0 @@
----
-
-- name: nvidia | Install Optimus tool
-  apt:
-    name:
-    - mate-optimus
-    state: present
-  become: yes
-  become_method: sudo

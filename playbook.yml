@@ -1,18 +1,19 @@
 #!/usr/bin/env ansible-playbook
 ---
+- hosts: homeservers
+  vars_files:
+    - default.config.yml
 
-- hosts: localhost
-  connection: local
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
+
   any_errors_fatal: true
   roles:
-    - { role: shell, tags: shell }
-    - { role: common, tags: common }
+    - { role: main, tags: main }
     - { role: hardware, tags: hardware }
-    - { role: python, tags: python }
-    - { role: node, tags: node }
-    - { role: golang, tags: golang }
-    - { role: rust, tags: rust }
-    - { role: swift, tags: swift }
-    - { role: containers, tags: containers }
-    - { role: apps, tags: apps }
-    - { role: cloud_tools, tags: cloud }
+
+    # - { role: cloud_tools, tags: cloud }
