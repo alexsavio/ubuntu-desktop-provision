@@ -2,15 +2,12 @@
 ansible_user: "{{ lookup('env', 'USER') }}"
 ansible_group: "{{ ansible_user }}"
 
-rsync_sync_src_dest: []
-
 apt_packages:
   - ack
   - ca-certificates
   - cmake
   - curl
   - direnv
-  - fuse
   - git
   - make
   - pass
@@ -18,7 +15,6 @@ apt_packages:
   - rsync
   - ssh
   - sshpass
-  - sudo
   - tig
   - tmux
   - vim
@@ -54,25 +50,18 @@ cargo_packages:
   - grex
   - just
   - lsd
-  - monolith
   - oxker
   - procs
-  - pumas
-  - pyflow
   - pylyzer
   - ripgrep
   - rm-improved
   - sd
   - starship
-  - tealdeer
-  - tokei
-  - ttdl
   - watchexec-cli
   - xcp
   - xh
   - zoxide
 
 pipx_packages:
-  - httpie
   - csvkit
   - tsrc
