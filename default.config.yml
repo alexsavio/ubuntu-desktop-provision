@@ -56,6 +56,7 @@ cargo_packages:
   - ripgrep
   - rm-improved
   - sd
+  - sniffnet
   - starship
   - watchexec-cli
   - xcp
